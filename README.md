@@ -19,7 +19,7 @@ Structure
 │           └── java
 │               └── LibraryTest.java
 ├── README.md
-└── build
+└── BuildScript
     ├── build.gradle   <=   Main build script
     ├── dep_project
     │   └── Stab       <=   Dependency target
