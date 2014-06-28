@@ -7,7 +7,7 @@ The goal is completion building App project.
 App project depends on Stab project.
 
 Structure
-=========
+---------
 
 ```
 ├── App               <=    Build target
@@ -30,3 +30,12 @@ Structure
     │                       └── Stab.java
     └── settings.gradle
 ```
+
+Build Command
+-------------
+
+```
+gradle -b BuildScript/build.gradle :App:build
+```
+
+on root.
