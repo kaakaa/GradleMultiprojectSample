@@ -43,3 +43,5 @@ And *SvnAnt* use JavaHL and SVNkit.
 
 Their licenses is below.
 
+* [SvnAnt license](http://subclipse.tigris.org/svnant/svn.html "SvnAnt license)
+* [and other licenses](https://github.com/kaakaa/GradleMultiprojectSample/tree/master/BuildScript/lib_svnant "and other licenses")
