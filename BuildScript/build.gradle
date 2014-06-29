@@ -16,9 +16,11 @@ task svnCheckout << {
 	mkdir(dep_destpath)
 
 	projectApp_depProjects.each { def projectName ->
-		mkdir("${dep_destpath}/${projectName}")
+		def checkoutDest = "${dep_destpath}/${projectName}"
+		mkdir(checkoutDest)
 		ant.svn(javahl: 'false', svnkit: 'true', failonerror: 'false') {
-			ant.checkout(url: "file://${dep_repopath}/${projectName}", destpath: "${dep_destpath}/${projectName}")
+			ant.checkout(url: "file://${dep_repopath}/${projectName}", destpath: checkoutDest)
+			ant.update(dir: checkoutDest)
 		}
 	}
 }
