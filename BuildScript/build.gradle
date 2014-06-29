@@ -1,3 +1,23 @@
+configurations {
+	svnant
+}
+ 
+dependencies {
+	svnant fileTree(dir: 'lib_svnant', include: '**/*.jar')
+}
+ 
+task checkoutProjects << {
+	def repo_path = new File("${project.rootDir}/../svn_repo/").canonicalPath
+	def destpath = 'dep_project'
+
+	ant.taskdef(resource: 'org/tigris/subversion/svnant/svnantlib.xml', classpath: configurations.svnant.asPath)
+	mkdir(destpath)
+	ant.svn(javahl: 'false', svnkit: 'true', failonerror: 'false') {
+		ant.checkout(url: "file://${repo_path}", destpath: destpath)
+		ant.update(dir: destpath)
+	}
+}
+
 subprojects {
 	apply plugin: 'java'
 	
@@ -14,4 +34,6 @@ project(':App') {
 	dependencies {
 	    compile project(':dep_project/Stab')
 	}
+
+	compileJava.dependsOn checkoutProjects
 }

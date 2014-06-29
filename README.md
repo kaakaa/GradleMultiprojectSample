@@ -10,7 +10,7 @@ Structure
 ---------
 
 ```
-├── App               <=    Build target
+├── App  <=  Build target project
 │   └── src
 │       ├── main
 │       │   └── java
@@ -18,17 +18,12 @@ Structure
 │       └── test
 │           └── java
 │               └── LibraryTest.java
+├── BuildScript
+│   ├── build.gradle  <=  Main build script
+│   ├── lib_svnant
+│   └── settings.gradle
 ├── README.md
-└── BuildScript
-    ├── build.gradle   <=   Main build script
-    ├── dep_project
-    │   └── Stab       <=   Dependency target
-    │       └── src 
-    │           └── main
-    │               └── java
-    │                   └── sample
-    │                       └── Stab.java
-    └── settings.gradle
+└── svn_repo  <=  include Stab project
 ```
 
 Build Command
@@ -39,3 +34,12 @@ gradle -b BuildScript/build.gradle :App:build
 ```
 
 on root.
+
+License
+=======
+
+This project include *Apache SvnAnt*.
+And *SvnAnt* use JavaHL and SVNkit.
+
+Their licenses is below.
+
