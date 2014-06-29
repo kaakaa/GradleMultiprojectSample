@@ -1,0 +1,110 @@
+id: a-2.0.r2/0
+type: file
+count: 0
+text: 1 0 327 310 491a1e965ffabe23d661a3682c2bb26e 4296b8b7e27fa9fe507d4538ee253726f08740e8 1-1/_c
+cpath: /Stab_dummy/src/main/java/sample/Stab.java
+copyroot: 0 /
+
+PLAIN
+K 9
+Stab.java
+V 15
+file a-2.0.r2/0
+END
+ENDREP
+id: 8-2.0.r2/251
+type: dir
+count: 0
+text: 2 199 39 39 6d1aa9d59c3ed82ff70e53db8e7bc7f9
+cpath: /Stab_dummy/src/main/java/sample
+copyroot: 0 /
+
+PLAIN
+K 6
+sample
+V 16
+dir 8-2.0.r2/251
+END
+ENDREP
+id: 6-2.0.r2/443
+type: dir
+count: 0
+text: 2 393 37 37 aa9bc240dfad2e00ed96a3f1a301c584
+cpath: /Stab_dummy/src/main/java
+copyroot: 0 /
+
+PLAIN
+K 4
+java
+V 16
+dir 6-2.0.r2/443
+END
+ENDREP
+id: 4-2.0.r2/626
+type: dir
+count: 0
+text: 2 578 35 35 91711053ba1eb449d7f8501896907bae
+cpath: /Stab_dummy/src/main
+copyroot: 0 /
+
+PLAIN
+K 4
+main
+V 16
+dir 4-2.0.r2/626
+END
+ENDREP
+id: 2-2.0.r2/804
+type: dir
+count: 0
+text: 2 756 35 35 f90015b8b4c649ebcf777f1e39bc8ec5
+cpath: /Stab_dummy/src
+copyroot: 0 /
+
+PLAIN
+K 3
+src
+V 16
+dir 2-2.0.r2/804
+END
+ENDREP
+id: 0-2.0.r2/976
+type: dir
+count: 0
+text: 2 929 34 34 b5c48ea2a693d2ba66f618e0e6e74905
+cpath: /Stab_dummy
+copyroot: 0 /
+
+PLAIN
+K 4
+Stab
+V 17
+dir 0-1.0.r1/1293
+K 10
+Stab_dummy
+V 16
+dir 0-2.0.r2/976
+END
+ENDREP
+id: 0.0.r2/1184
+type: dir
+pred: 0.0.r1/1459
+count: 2
+text: 2 1097 74 74 894173cded80484e63d0f20658631e3f
+cpath: /
+copyroot: 0 /
+
+_0.0.t1-1 add-dir false false /Stab_dummy
+
+_2.0.t1-1 add-dir false false /Stab_dummy/src
+
+_4.0.t1-1 add-dir false false /Stab_dummy/src/main
+
+_6.0.t1-1 add-dir false false /Stab_dummy/src/main/java
+
+_8.0.t1-1 add-dir false false /Stab_dummy/src/main/java/sample
+
+_a.0.t1-1 add-file true false /Stab_dummy/src/main/java/sample/Stab.java
+
+
+1184 1313
