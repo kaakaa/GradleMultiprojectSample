@@ -1,26 +1,27 @@
-configurations {
-	svnant
-}
-ext {
-	dep_repopath = new File("${project.rootDir}/../svn_repo/").canonicalPath
-	dep_destpath = 'dep_project'
-	projectApp_depProjects = ["Stab"]
-}
- 
-dependencies {
-	svnant fileTree(dir: 'lib_svnant', include: '**/*.jar')
-}
+allprojects {
+	configurations {
+		svnant
+	}
+	
+	ext {
+		dep_repopath = new File("${project.rootDir}/../svn_repo/").canonicalPath
+		dep_destpath = 'dep_project'
+		depProjects = []
+	}
+	 
+	dependencies {
+		svnant fileTree(dir: "${project.rootDir}/lib_svnant", include: '**/*.jar')
+	}
 
-task svnCheckout << {
-	ant.taskdef(resource: 'org/tigris/subversion/svnant/svnantlib.xml', classpath: configurations.svnant.asPath)
-	mkdir(dep_destpath)
-
-	projectApp_depProjects.each { def projectName ->
-		def checkoutDest = "${dep_destpath}/${projectName}"
-		mkdir(checkoutDest)
-		ant.svn(javahl: 'false', svnkit: 'true', failonerror: 'false') {
-			ant.checkout(url: "file://${dep_repopath}/${projectName}", destpath: checkoutDest)
-			ant.update(dir: checkoutDest)
+	task svnCheckout << {
+		ant.taskdef(resource: 'org/tigris/subversion/svnant/svnantlib.xml', classpath: configurations.svnant.asPath)
+	
+		depProjects.each { def projectName ->
+			def checkoutDest = "${project.rootDir}/${dep_destpath}/${projectName}"
+			ant.svn(javahl: 'false', svnkit: 'true', failonerror: 'false') {
+				ant.checkout(url: "file://${dep_repopath}/${projectName}", destpath: checkoutDest)
+				ant.update(dir: checkoutDest)
+			}
 		}
 	}
 }
@@ -39,6 +40,10 @@ subprojects {
 }
 
 project(':App') {
+	ext {
+		depProjects = ["Stab"]
+	}
+
 	dependencies {
 	    compile project(':dep_project/Stab')
 	}
